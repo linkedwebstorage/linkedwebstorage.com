@@ -30,140 +30,118 @@
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <style>
-      :root {
-        --primary-color: #3a0ca3;
-        --secondary-color: #4cc9f0;
-        --accent-color: #f72585;
-        --background-color: #f0f0f0;
-        --text-color: #2b2d42;
-        --light-text-color: #ffffff;
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#3a0ca3',
+              secondary: '#4cc9f0',
+              accent: '#f72585',
+              light: '#ffffff',
+              dark: '#2b2d42',
+              background: '#f0f0f0'
+            }
+          }
+        }
       }
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--background-color);
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      h1,
-      h2 {
-        color: var(--primary-color);
-      }
-      .hero {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: var(--light-text-color);
-        padding: 60px 40px;
-        border-radius: 15px;
-        margin-bottom: 40px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-      .hero h1 {
-        color: var(--light-text-color);
-        font-size: 2.5em;
-        margin-bottom: 20px;
-      }
-      .cta-button {
-        display: inline-block;
-        background-color: var(--accent-color);
-        color: var(--light-text-color);
-        padding: 12px 24px;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: bold;
-        margin-top: 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-      .cta-button:hover {
-        background-color: #e91e63;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      }
-      .section {
-        background-color: white;
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-      .section h2 {
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
-      ul li:before {
-        content: '•';
-        color: var(--accent-color);
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
-      footer {
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid var(--secondary-color);
-        color: var(--primary-color);
-      }
-      a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-      a:hover {
-        color: var(--primary-color);
-      }
-      .disclaimer {
-        background-color: rgba(58, 12, 163, 0.1);
-        border-left: 4px solid var(--primary-color);
-        padding: 15px 20px;
-        margin-bottom: 30px;
-        border-radius: 0 10px 10px 0;
-        font-size: 0.95em;
-      }
-      .disclaimer a {
-        font-weight: 600;
-      }
-    </style>
+    </script>
   </head>
-  <body>
-    <div class="disclaimer">
-      <strong>Note:</strong> This is an unofficial information page about the
-      W3C Linked Web Storage initiative. For official information, please visit
-      the
-      <a href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+  <body
+    class="bg-background text-dark font-sans leading-relaxed p-3 md:p-5 max-w-7xl mx-auto"
+  >
+    <!-- Disclaimer -->
+    <div
+      class="bg-primary/10 border-l-4 border-primary rounded-r-lg p-3 md:p-4 mb-6 md:mb-8 text-sm md:text-base"
+    >
+      <strong class="text-primary">Note:</strong> This is an unofficial
+      information page about the W3C Linked Web Storage initiative. For official
+      information, please visit the
+      <a
+        href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+        class="font-semibold text-accent hover:text-primary transition-colors"
         >W3C Linked Web Storage Working Group Charter</a
       >.
     </div>
 
-    <div class="hero">
-      <h1>W3C Linked Web Storage: Putting You in Control of Your Data</h1>
-      <p>
-        Imagine a web where you decide where your data is stored and who can
-        access it. That's the future the W3C Linked Web Storage Working Group is
-        working to create.
-      </p>
-      <a
-        href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
-        class="cta-button"
-        >Learn More</a
+    <!-- Hero Section -->
+    <div
+      class="bg-gradient-to-br from-primary to-secondary text-light rounded-2xl p-5 md:p-8 lg:p-10 mb-8 md:mb-10 shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+    >
+      <!-- Hero Content -->
+      <div class="w-full md:w-1/2 md:pr-5">
+        <div
+          class="inline-flex items-center bg-black/20 text-light px-3 py-1.5 rounded-full text-xs md:text-sm mb-5"
+        >
+          <span class="text-accent mr-1.5">•</span>W3C Initiative 2024-2026
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-3"
+        >
+          Linked Web Storage:
+          <span class="block text-accent">Taking Back Control</span> of Your
+          Data
+        </h1>
+        <p class="mb-5 md:mb-6 text-sm md:text-base">
+          Imagine a web where you decide where your data is stored and who can
+          access it. That's the future the W3C Linked Web Storage Working Group
+          is building.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-4">
+          <a
+            href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+            class="bg-accent text-light font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all text-center text-sm md:text-base"
+            >Learn More <span>→</span></a
+          >
+          <a
+            href="https://www.w3.org/groups/wg/lws/"
+            class="bg-white/20 text-light font-bold py-3 px-6 rounded-full shadow-md hover:bg-white/30 transition-all text-center text-sm md:text-base"
+            >Join the Initiative</a
+          >
+        </div>
+      </div>
+
+      <!-- Hero Features -->
+      <div
+        class="w-full md:w-1/2 bg-white/10 backdrop-blur rounded-xl p-4 grid grid-cols-1 sm:grid-cols-2 gap-3"
       >
+        <div
+          class="bg-white/20 rounded-lg p-4 flex flex-col items-center text-center"
+        >
+          <div class="text-4xl mb-2">⊙</div>
+          <div class="text-sm md:text-base">User-Controlled Storage</div>
+        </div>
+        <div
+          class="bg-white/20 rounded-lg p-4 flex flex-col items-center text-center"
+        >
+          <div class="text-4xl mb-2">⊗</div>
+          <div class="text-sm md:text-base">Decentralized Data</div>
+        </div>
+        <div
+          class="bg-white/20 rounded-lg p-4 flex flex-col items-center text-center"
+        >
+          <div class="text-4xl mb-2">⊛</div>
+          <div class="text-sm md:text-base">Enhanced Privacy</div>
+        </div>
+        <div
+          class="bg-white/20 rounded-lg p-4 flex flex-col items-center text-center"
+        >
+          <div class="text-lg font-bold">2024-26</div>
+          <div class="text-sm">Development Timeline</div>
+        </div>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>What is Linked Web Storage?</h2>
+    <!-- What is Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        What is Linked Web Storage?
+      </h2>
       <p>
         Linked Web Storage is a new approach to how data is handled on the web.
         It aims to give you more control over your personal information by
@@ -171,8 +149,13 @@
       </p>
     </div>
 
-    <div class="section">
-      <h2>Why Does This Matter?</h2>
+    <!-- Why Does This Matter? Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        Why Does This Matter?
+      </h2>
       <p>
         Currently, when you use most web services, your data is stored and
         controlled by the service provider. This can limit your ability to
@@ -182,17 +165,64 @@
       </p>
     </div>
 
-    <div class="section">
-      <h2>What Will This Enable?</h2>
-      <ul>
-        <li>Choose where your data is stored</li>
-        <li>Decide which applications can access your data</li>
-        <li>Improved privacy and security for your personal information</li>
+    <!-- What Will This Enable? Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4"
+      >
+        What Will This Enable?
+      </h2>
+      <div
+        class="h-0.5 bg-gradient-to-r from-secondary to-secondary/10 rounded w-full mb-6"
+      ></div>
+      <ul class="space-y-4">
+        <li class="flex items-start">
+          <span
+            class="text-accent bg-accent/10 w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >✓</span
+          >
+          <span>Choose where your personal data is stored</span>
+        </li>
+        <li class="flex items-start">
+          <span
+            class="text-accent bg-accent/10 w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >✓</span
+          >
+          <span>Control which applications can access your information</span>
+        </li>
+        <li class="flex items-start">
+          <span
+            class="text-accent bg-accent/10 w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >✓</span
+          >
+          <span
+            >Transfer your data between services without vendor lock-in</span
+          >
+        </li>
+        <li class="flex items-start">
+          <span
+            class="text-accent bg-accent/10 w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >✓</span
+          >
+          <span>Enhanced privacy and security for personal information</span>
+        </li>
+        <li class="flex items-start">
+          <span
+            class="text-accent bg-accent/10 w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0"
+            >✓</span
+          >
+          <span>Keep ownership of your data across the web</span>
+        </li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>When Can We Expect This?</h2>
+    <!-- When Can We Expect This? Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        When Can We Expect This?
+      </h2>
       <p>
         The W3C Linked Web Storage Working Group is working on this from
         September 2024 to September 2026. While it may take some time before
@@ -201,30 +231,48 @@
       </p>
     </div>
 
-    <div class="section">
-      <h2>Related Resources</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/w3c/lws-ucs/issues" target="_blank"
-            >W3C Linked Web Storage Use Cases and Scenarios (UCS) Repository</a
+    <!-- Related Resources Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        Related Resources
+      </h2>
+      <ul class="space-y-4">
+        <li class="relative pl-5">
+          <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+          <a
+            href="https://github.com/w3c/lws-ucs/issues"
+            target="_blank"
+            class="text-accent hover:text-primary transition-colors"
           >
+            W3C Linked Web Storage Use Cases and Scenarios (UCS) Repository
+          </a>
           - Contribute to use cases and scenarios
         </li>
-        <li>
+        <li class="relative pl-5">
+          <span class="absolute left-0 top-2 text-accent font-bold">•</span>
           <a
             href="https://github.com/linkedwebstorage/linkedwebstorage.com"
             target="_blank"
-            >Linked Web Storage Organization Repository</a
+            class="text-accent hover:text-primary transition-colors"
           >
+            Linked Web Storage Organization Repository
+          </a>
           - Main GitHub organization for the project
         </li>
       </ul>
     </div>
 
-    <footer>
+    <!-- Footer -->
+    <footer
+      class="text-center mt-8 pt-5 border-t border-secondary text-primary"
+    >
       <p>
         For more detailed information, visit the
-        <a href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+        <a
+          href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+          class="text-accent hover:text-primary transition-colors"
           >official W3C Linked Web Storage Working Group Charter</a
         >.
       </p>
