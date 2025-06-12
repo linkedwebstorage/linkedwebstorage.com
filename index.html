@@ -142,10 +142,22 @@
       >
         What is Linked Web Storage?
       </h2>
-      <p>
+      <p class="mb-4">
         Linked Web Storage is a new approach to how data is handled on the web.
         It aims to give you more control over your personal information by
         allowing you to choose where your data is stored and who can access it.
+      </p>
+      <p>
+        The W3C is actively developing the
+        <a
+          href="https://w3c.github.io/lws-protocol/spec/"
+          class="text-accent hover:text-primary transition-colors font-semibold"
+          target="_blank"
+          >LWS Protocol specification</a
+        >, which defines standard interactions for secure and permissioned
+        access to externally stored data. This protocol includes authentication,
+        authorization, and resource management capabilities that enable true
+        user-controlled data storage on the web.
       </p>
     </div>
 
@@ -221,13 +233,30 @@
       <h2
         class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
       >
-        When Can We Expect This?
+        Current Progress & Timeline
       </h2>
+      <div
+        class="bg-secondary/10 rounded-lg p-4 mb-4 border-l-4 border-secondary"
+      >
+        <p class="font-semibold text-primary mb-2">Latest Update: June 2025</p>
+        <p class="text-sm">
+          The W3C has published the first
+          <a
+            href="https://w3c.github.io/lws-protocol/spec/"
+            class="text-accent hover:text-primary transition-colors font-semibold"
+            target="_blank"
+            >LWS Protocol specification draft</a
+          >, marking significant progress in defining the technical standards
+          for user-controlled data storage.
+        </p>
+      </div>
       <p>
         The W3C Linked Web Storage Working Group is working on this from
-        September 2024 to September 2026. While it may take some time before
-        these changes are widely adopted, this work is laying the foundation for
-        a more user-centric web.
+        September 2024 to September 2026. With the protocol specification now in
+        active development, we're seeing concrete progress toward a more
+        user-centric web. While it may take some time before these changes are
+        widely adopted, this work is laying the foundation for true data
+        ownership and control.
       </p>
     </div>
 
@@ -238,6 +267,42 @@
       >
         Related Resources
       </h2>
+
+      <!-- Featured Protocol Resources -->
+      <div
+        class="bg-secondary/10 rounded-lg p-4 mb-6 border-l-4 border-secondary"
+      >
+        <h3 class="text-lg font-semibold text-primary mb-3">
+          Protocol Specification
+        </h3>
+        <ul class="space-y-3">
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+            <a
+              href="https://w3c.github.io/lws-protocol/spec/"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              LWS Protocol Specification (Editor's Draft)
+            </a>
+            - The official protocol specification defining resource access,
+            authentication, and operations
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/w3c/lws-protocol"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              W3C LWS Protocol Repository
+            </a>
+            - Contribute to the protocol development and track progress
+          </li>
+        </ul>
+      </div>
+
+      <!-- Other Resources -->
       <ul class="space-y-4">
         <li class="relative pl-5">
           <span class="absolute left-0 top-2 text-accent font-bold">•</span>
@@ -257,9 +322,9 @@
             target="_blank"
             class="text-accent hover:text-primary transition-colors"
           >
-            Linked Web Storage Organization Repository
+            This website's GitHub repository
           </a>
-          - Main GitHub organization for the project
+          - Main GitHub organization for this website.
         </li>
       </ul>
     </div>
