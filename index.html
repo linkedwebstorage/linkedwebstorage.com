@@ -12,10 +12,7 @@
       name="keywords"
       content="W3C, Linked Web Storage, data control, web standards, user privacy"
     />
-    <link
-      rel="canonical"
-      href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
-    />
+    <link rel="canonical" href="https://linkedwebstorage.com/" />
     <meta
       property="og:title"
       content="W3C Linked Web Storage: Empowering Users with Data Control"
@@ -24,12 +21,32 @@
       property="og:description"
       content="Discover how the W3C is working to give you more control over your data on the web."
     />
-    <meta
-      property="og:url"
-      content="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
-    />
+    <meta property="og:url" content="https://linkedwebstorage.com/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233a0ca3'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='system-ui'>LWS</text></svg>"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Linked Web Storage",
+        "description": "Unofficial information page about the W3C Linked Web Storage initiative for user-controlled data on the web.",
+        "url": "https://linkedwebstorage.com/",
+        "about": {
+          "@type": "Thing",
+          "name": "W3C Linked Web Storage Working Group",
+          "url": "https://www.w3.org/groups/wg/lws/"
+        },
+        "keywords": "W3C, Linked Web Storage, data control, web standards, user privacy, Solid"
+      }
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,6 +70,13 @@
   <body
     class="bg-background text-dark font-sans leading-relaxed p-3 md:p-5 max-w-7xl mx-auto"
   >
+    <!-- Skip Link for Accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded"
+      >Skip to main content</a
+    >
+
     <!-- Disclaimer -->
     <div
       class="bg-primary/10 border-l-4 border-primary rounded-r-lg p-3 md:p-4 mb-6 md:mb-8 text-sm md:text-base"
@@ -68,6 +92,7 @@
     </div>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <div
       class="bg-gradient-to-br from-primary to-secondary text-light rounded-2xl p-5 md:p-8 lg:p-10 mb-8 md:mb-10 shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
     >
@@ -147,7 +172,7 @@
         It aims to give you more control over your personal information by
         allowing you to choose where your data is stored and who can access it.
       </p>
-      <p>
+      <p class="mb-4">
         The W3C is actively developing the
         <a
           href="https://w3c.github.io/lws-protocol/"
@@ -158,6 +183,17 @@
         access to externally stored data. This protocol includes authentication,
         authorization, and resource management capabilities that enable true
         user-controlled data storage on the web.
+      </p>
+      <p class="text-sm bg-primary/5 rounded-lg p-3">
+        <strong class="text-primary">Historical Note:</strong> LWS builds on the
+        <a
+          href="https://solidproject.org/"
+          class="text-accent hover:text-primary transition-colors font-semibold"
+          target="_blank"
+          >Solid Project</a
+        >, which has been incubated by the W3C Solid Community Group since 2018.
+        The Linked Web Storage Working Group was formed in 2024 to bring these
+        specifications to official W3C Recommendation status.
       </p>
     </div>
 
@@ -180,13 +216,10 @@
     <!-- What Will This Enable? Section -->
     <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
       <h2
-        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4"
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
       >
         What Will This Enable?
       </h2>
-      <div
-        class="h-0.5 bg-gradient-to-r from-secondary to-secondary/10 rounded w-full mb-6"
-      ></div>
       <ul class="space-y-4">
         <li class="flex items-start">
           <span
@@ -238,16 +271,26 @@
       <div
         class="bg-secondary/10 rounded-lg p-4 mb-4 border-l-4 border-secondary"
       >
-        <p class="font-semibold text-primary mb-2">Latest Update: June 2025</p>
+        <p class="font-semibold text-primary mb-2">Latest Update: November 2025</p>
+        <p class="text-sm mb-3">
+          The W3C has published the
+          <a
+            href="https://www.w3.org/TR/lws-ucs/"
+            class="text-accent hover:text-primary transition-colors font-semibold"
+            target="_blank"
+            >Linked Web Storage Use Cases</a
+          > document as a Group Draft Note, defining 39 core requirements across
+          data management, access control, collaboration, and security.
+        </p>
         <p class="text-sm">
-          The W3C has published the first
+          The
           <a
             href="https://w3c.github.io/lws-protocol/"
             class="text-accent hover:text-primary transition-colors font-semibold"
             target="_blank"
-            >LWS Protocol specification draft</a
-          >, marking significant progress in defining the technical standards
-          for user-controlled data storage.
+            >LWS Protocol 1.0 specification</a
+          > now includes four authentication suites supporting OpenID Connect,
+          SAML 2.0, and decentralized identifiers (did:key).
         </p>
       </div>
       <p>
@@ -260,6 +303,182 @@
       </p>
     </div>
 
+    <!-- For Developers Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        For Developers
+      </h2>
+      <p class="mb-4">
+        Ready to build with Linked Web Storage? Here are the key technical
+        resources to get started:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href="https://w3c.github.io/lws-protocol/"
+          target="_blank"
+          class="block bg-primary/5 hover:bg-primary/10 rounded-lg p-4 transition-colors group"
+        >
+          <h3
+            class="font-semibold text-primary group-hover:text-accent transition-colors mb-1"
+          >
+            LWS Protocol 1.0 Core
+          </h3>
+          <p class="text-sm text-dark/70">
+            Core specification for REST servers and clients
+          </p>
+        </a>
+        <a
+          href="https://www.w3.org/TR/lws-ucs/"
+          target="_blank"
+          class="block bg-primary/5 hover:bg-primary/10 rounded-lg p-4 transition-colors group"
+        >
+          <h3
+            class="font-semibold text-primary group-hover:text-accent transition-colors mb-1"
+          >
+            Use Cases & Requirements
+          </h3>
+          <p class="text-sm text-dark/70">
+            39 requirements across data, access control, and security
+          </p>
+        </a>
+        <a
+          href="https://github.com/w3c/lws-protocol"
+          target="_blank"
+          class="block bg-primary/5 hover:bg-primary/10 rounded-lg p-4 transition-colors group"
+        >
+          <h3
+            class="font-semibold text-primary group-hover:text-accent transition-colors mb-1"
+          >
+            Protocol Repository
+          </h3>
+          <p class="text-sm text-dark/70">
+            Contribute to development, file issues, track progress
+          </p>
+        </a>
+        <a
+          href="https://www.w3.org/groups/wg/lws/"
+          target="_blank"
+          class="block bg-primary/5 hover:bg-primary/10 rounded-lg p-4 transition-colors group"
+        >
+          <h3
+            class="font-semibold text-primary group-hover:text-accent transition-colors mb-1"
+          >
+            Join the Working Group
+          </h3>
+          <p class="text-sm text-dark/70">
+            Participate in weekly meetings and spec development
+          </p>
+        </a>
+      </div>
+      <div class="mt-4 p-3 bg-secondary/10 rounded-lg text-sm">
+        <strong class="text-primary">Authentication Suites:</strong> The spec
+        supports OpenID Connect, SAML 2.0, did:key, and controlled identifiers
+        for flexible authentication options.
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        <details class="group bg-primary/5 rounded-lg">
+          <summary
+            class="cursor-pointer p-4 font-semibold text-primary list-none flex justify-between items-center"
+          >
+            What's the difference between LWS and Solid?
+            <span
+              class="transform group-open:rotate-180 transition-transform text-accent"
+              >▼</span
+            >
+          </summary>
+          <div class="px-4 pb-4 text-sm">
+            LWS (Linked Web Storage) is the W3C standardization effort that
+            builds on the Solid Project. The Solid Community Group incubated the
+            specifications since 2018, and the LWS Working Group was formed in
+            2024 to bring these to official W3C Recommendation status.
+          </div>
+        </details>
+        <details class="group bg-primary/5 rounded-lg">
+          <summary
+            class="cursor-pointer p-4 font-semibold text-primary list-none flex justify-between items-center"
+          >
+            When will LWS be ready for production use?
+            <span
+              class="transform group-open:rotate-180 transition-transform text-accent"
+              >▼</span
+            >
+          </summary>
+          <div class="px-4 pb-4 text-sm">
+            The Working Group charter runs until September 2026. While early
+            implementations exist (based on Solid), the official W3C
+            Recommendations are still in development. Check the protocol spec
+            for current implementation requirements.
+          </div>
+        </details>
+        <details class="group bg-primary/5 rounded-lg">
+          <summary
+            class="cursor-pointer p-4 font-semibold text-primary list-none flex justify-between items-center"
+          >
+            How can I contribute to LWS development?
+            <span
+              class="transform group-open:rotate-180 transition-transform text-accent"
+              >▼</span
+            >
+          </summary>
+          <div class="px-4 pb-4 text-sm">
+            You can contribute through the
+            <a
+              href="https://github.com/w3c/lws-protocol"
+              class="text-accent hover:text-primary"
+              >GitHub repositories</a
+            >, participate in
+            <a
+              href="https://www.w3.org/groups/wg/lws/"
+              class="text-accent hover:text-primary"
+              >Working Group meetings</a
+            >, or submit use cases to the
+            <a
+              href="https://github.com/w3c/lws-ucs"
+              class="text-accent hover:text-primary"
+              >Use Cases repository</a
+            >.
+          </div>
+        </details>
+        <details class="group bg-primary/5 rounded-lg">
+          <summary
+            class="cursor-pointer p-4 font-semibold text-primary list-none flex justify-between items-center"
+          >
+            Is this an official W3C website?
+            <span
+              class="transform group-open:rotate-180 transition-transform text-accent"
+              >▼</span
+            >
+          </summary>
+          <div class="px-4 pb-4 text-sm">
+            No, this is an unofficial informational resource. For official
+            information, visit the
+            <a
+              href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+              class="text-accent hover:text-primary"
+              >W3C Linked Web Storage Working Group Charter</a
+            >
+            or the
+            <a
+              href="https://www.w3.org/groups/wg/lws/"
+              class="text-accent hover:text-primary"
+              >official Working Group page</a
+            >.
+          </div>
+        </details>
+      </div>
+    </div>
+
     <!-- Related Resources Section -->
     <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
       <h2
@@ -268,66 +487,107 @@
         Related Resources
       </h2>
 
-      <!-- Featured Protocol Resources -->
+      <!-- Featured W3C Documents -->
       <div
         class="bg-secondary/10 rounded-lg p-4 mb-6 border-l-4 border-secondary"
       >
         <h3 class="text-lg font-semibold text-primary mb-3">
-          Protocol Specification
+          Official W3C Documents
         </h3>
         <ul class="space-y-3">
           <li class="relative pl-5">
-            <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
             <a
               href="https://w3c.github.io/lws-protocol/"
               target="_blank"
               class="text-accent hover:text-primary transition-colors font-semibold"
             >
-              LWS Protocol Specification (Editor's Draft)
+              LWS Protocol 1.0 Specification (Editor's Draft)
             </a>
-            - The official protocol specification defining resource access,
-            authentication, and operations
+            - Core protocol for resource access, authentication, and operations
           </li>
           <li class="relative pl-5">
-            <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
             <a
-              href="https://github.com/w3c/lws-protocol"
+              href="https://www.w3.org/TR/lws-ucs/"
               target="_blank"
               class="text-accent hover:text-primary transition-colors font-semibold"
             >
-              W3C LWS Protocol Repository
+              Linked Web Storage Use Cases (W3C Draft Note)
             </a>
-            - Contribute to the protocol development and track progress
+            - User stories, use cases, and 39 identified requirements
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://www.w3.org/2024/09/linked-web-storage-wg-charter.html"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              Working Group Charter
+            </a>
+            - Official charter defining the group's mission and scope
           </li>
         </ul>
       </div>
 
-      <!-- Other Resources -->
-      <ul class="space-y-4">
+      <!-- GitHub Repositories -->
+      <h3 class="text-lg font-semibold text-primary mb-3">
+        GitHub Repositories
+      </h3>
+      <ul class="space-y-4 mb-6">
         <li class="relative pl-5">
-          <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+          <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
           <a
-            href="https://github.com/w3c/lws-ucs/issues"
+            href="https://github.com/w3c/lws-protocol"
             target="_blank"
             class="text-accent hover:text-primary transition-colors"
           >
-            W3C Linked Web Storage Use Cases and Scenarios (UCS) Repository
+            w3c/lws-protocol
           </a>
-          - Contribute to use cases and scenarios
+          - Protocol specification development
         </li>
         <li class="relative pl-5">
-          <span class="absolute left-0 top-2 text-accent font-bold">•</span>
+          <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+          <a
+            href="https://github.com/w3c/lws-ucs"
+            target="_blank"
+            class="text-accent hover:text-primary transition-colors"
+          >
+            w3c/lws-ucs
+          </a>
+          - Use cases and requirements
+        </li>
+      </ul>
+
+      <!-- Related Projects -->
+      <h3 class="text-lg font-semibold text-primary mb-3">Related Projects</h3>
+      <ul class="space-y-4">
+        <li class="relative pl-5">
+          <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+          <a
+            href="https://solidproject.org/"
+            target="_blank"
+            class="text-accent hover:text-primary transition-colors"
+          >
+            Solid Project
+          </a>
+          - The community project that originated these specifications
+        </li>
+        <li class="relative pl-5">
+          <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
           <a
             href="https://github.com/linkedwebstorage/linkedwebstorage.com"
             target="_blank"
             class="text-accent hover:text-primary transition-colors"
           >
-            This website's GitHub repository
+            This website's repository
           </a>
-          - Main GitHub organization for this website.
+          - Contribute to this informational site
         </li>
       </ul>
     </div>
+    </main>
 
     <!-- Footer -->
     <footer
