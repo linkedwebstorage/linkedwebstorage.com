@@ -394,6 +394,107 @@
       </div>
     </div>
 
+    <!-- Conformance Section -->
+    <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
+      <h2
+        class="text-xl md:text-2xl text-primary border-b-2 border-secondary pb-2 mb-4 md:mb-6"
+      >
+        Conformance &amp; Test Suites
+      </h2>
+      <p class="mb-6">
+        LWS is testable. Two harnesses run against a live server and report in
+        W3C EARL, so "implements LWS" is a number rather than a claim.
+      </p>
+
+      <div class="bg-secondary/10 rounded-lg p-4 mb-6 border-l-4 border-secondary">
+        <ul class="space-y-3">
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/touchstone"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              Touchstone
+            </a>
+            — the LWS conformance harness: 101 YAML-LD test definitions (203
+            executions) covering the core protocol, the webhook notification
+            suite, the type index and search services, and all three
+            authentication suites, baselined on the 5 October 2026 drafts. Runs
+            as a CLI, a Docker image, a GitHub Action, or an MCP server; reports
+            in EARL, HTML, JUnit, and PDF. By Erich Bremer.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/lws-contrib/lws-test-suite"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-test-suite
+            </a>
+            — the LWS 1.0 core test suite referenced from the W3C specification
+            repository, in JSON-LD; Touchstone mirrors and extends it.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/linkedwebstorage/test-suite"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              linkedwebstorage/test-suite
+            </a>
+            — an unofficial 62-test EARL suite over the core, search, notification,
+            and did:key / ODRL drafts, developed alongside lwsd.
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="text-lg font-semibold text-primary mb-3">Touchstone results</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm mb-4">
+          <thead>
+            <tr class="text-left border-b-2 border-secondary">
+              <th class="py-2 pr-4">Server</th>
+              <th class="py-2 pr-4">Drafts</th>
+              <th class="py-2 pr-4">Passed</th>
+              <th class="py-2 pr-4">Failed</th>
+              <th class="py-2 pr-4">Not applicable</th>
+              <th class="py-2">Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-secondary/30">
+              <td class="py-2 pr-4">
+                <a href="https://github.com/linkedwebstorage/lwsd#touchstone" target="_blank" class="text-accent hover:text-primary font-semibold">lwsd</a>
+              </td>
+              <td class="py-2 pr-4">5 Oct 2026</td>
+              <td class="py-2 pr-4 font-semibold">196 / 203</td>
+              <td class="py-2 pr-4">0</td>
+              <td class="py-2 pr-4">7 (3 SAML, 4 optional)</td>
+              <td class="py-2 font-semibold text-primary">conformant</td>
+            </tr>
+            <tr class="border-b border-secondary/30">
+              <td class="py-2 pr-4">
+                <a href="https://github.com/jeswr/CommunitySolidServer/pull/124" target="_blank" class="text-accent hover:text-primary font-semibold">@solid/community-server-lws</a>
+              </td>
+              <td class="py-2 pr-4">28 Sep 2026</td>
+              <td class="py-2 pr-4 font-semibold">core 116 / 116, webhooks 11 / 11, auth 23 / 23</td>
+              <td class="py-2 pr-4">0</td>
+              <td class="py-2 pr-4">SAML</td>
+              <td class="py-2 font-semibold text-primary">conformant (reported)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm">
+        Results as reported by each project on the date shown; the harness and
+        the drafts both move. To add yours, run Touchstone against your server
+        and open a pull request with the report.
+      </p>
+    </div>
+
     <!-- Implementations Section -->
     <div class="bg-white rounded-xl p-5 md:p-8 mb-6 md:mb-8 shadow-md">
       <h2
@@ -417,16 +518,72 @@
           <li class="relative pl-5">
             <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
             <a
+              href="https://github.com/linkedwebstorage/lwsd"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lwsd
+            </a>
+            — LWS Daemon, in JavaScript: the LWS 1.0 core protocol, the embedded
+            authorization server (RFC 8693 token exchange, RFC 9728 discovery),
+            access requests and grants (ODRL), signed webhook notifications
+            (RFC 9421), the type index and search services (HTTP QUERY), and the
+            CID (did:key and HTTPS) and OpenID Connect authentication suites.
+            <strong>196 of 203 Touchstone tests pass (0 failed) — conformant</strong>
+            against the October 2026 drafts. A plugin on JSS; one command:
+            <code class="bg-white px-1 rounded text-sm">npx lwsd</code>.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/jeswr/LinkedWebStorage"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              @solid/community-server-lws
+            </a>
+            — LWS for the Community Solid Server (CSS v8), as a Components.js
+            plugin: LWS alone or side by side with the Solid Protocol on the same
+            pods, with WAC or ACP authorization. By Jesse Wright.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/lws-server"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-server
+            </a>
+            — an LWS server in Java (Jakarta servlets on embedded Jetty) with an
+            embedded authorization server, all three authentication suites, WAC,
+            SPARQL, DPoP, and ACME TLS. By Erich Bremer.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
               href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer"
               target="_blank"
               class="text-accent hover:text-primary transition-colors font-semibold"
             >
               JavaScript Solid Server (JSS)
             </a>
-            — serves LWS pods with W3C Controlled Identifier (CID v1.0) profiles,
-            the LWS Authentication Suite, did:nostr, NIP-98, and WebSocket/SSE
-            notifications. One-command install:
+            — the Solid server that hosts lwsd. Serves pods with W3C Controlled
+            Identifier (CID v1.0) profiles, accepts LWS self-signed CID
+            credentials alongside Solid-OIDC and NIP-98, and provides the plugin
+            host lwsd runs on. One-command install:
             <code class="bg-white px-1 rounded text-sm">npx jspod</code>.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/lws-drupal"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-drupal
+            </a>
+            — a Drupal module exposing a site as Linked Web Storage.
           </li>
         </ul>
       </div>
@@ -437,6 +594,29 @@
           Clients &amp; Apps (consume LWS storage)
         </h3>
         <ul class="space-y-3">
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/lws-client"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-client
+            </a>
+            — LWS client libraries in Java, Rust, C++, JavaScript, Python, Go,
+            C#, WebAssembly, Swift, PHP, and Kotlin.
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/lws-fuse"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-fuse
+            </a>
+            — mount an LWS storage as a filesystem (FUSE).
+          </li>
           <li class="relative pl-5">
             <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
             <a
@@ -460,6 +640,19 @@
           Libraries &amp; Authentication
         </h3>
         <ul class="space-y-3">
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
+            <a
+              href="https://github.com/ebremer/lws-authn"
+              target="_blank"
+              class="text-accent hover:text-primary transition-colors font-semibold"
+            >
+              lws-authn
+            </a>
+            — a Keycloak extension implementing all three LWS 1.0 authentication
+            suites: OpenID Connect, Self-signed Identity (CID: HTTPS, did:key,
+            did:web), and SAML 2.0.
+          </li>
           <li class="relative pl-5">
             <span class="absolute left-0 top-0.5 text-accent font-bold">•</span>
             <a
@@ -537,10 +730,12 @@
             >
           </summary>
           <div class="px-4 pb-4 text-sm">
-            The Working Group charter runs until September 2026. While early
-            implementations exist (based on Solid), the official W3C
-            Recommendations are still in development. Check the protocol spec
-            for current implementation requirements.
+            The specifications are W3C Working Drafts (core protocol: 5 October
+            2026) under a Working Group whose charter is being renewed. They are
+            implementable today: a conformance harness exists, and servers pass
+            it (see Conformance &amp; Test Suites above). Expect details to move
+            until Candidate Recommendation; check the protocol spec for current
+            requirements.
           </div>
         </details>
         <details class="group bg-primary/5 rounded-lg">
