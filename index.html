@@ -417,10 +417,11 @@
             >
               Touchstone
             </a>
-            — the LWS conformance harness: 101 YAML-LD test definitions (203
-            executions) covering the core protocol, the webhook notification
-            suite, the type index and search services, and all three
-            authentication suites, baselined on the 5 October 2026 drafts. Runs
+            — the LWS conformance harness: 221 YAML-LD server tests covering
+            the core protocol (moving resources included), the webhook
+            notification suite, the type index and search services, and all
+            three authentication suites, baselined on the 19 October 2026
+            drafts; client rules too. Runs
             as a CLI, a Docker image, a GitHub Action, or an MCP server; reports
             in EARL, HTML, JUnit, and PDF. By Erich Bremer.
           </li>
@@ -547,10 +548,12 @@
             — LWS Daemon, in JavaScript: the LWS 1.0 core protocol, the embedded
             authorization server (RFC 8693 token exchange, RFC 9728 discovery),
             access requests and grants (ODRL), signed webhook notifications
-            (RFC 9421), the type index and search services (HTTP QUERY), and the
-            CID (did:key and HTTPS) and OpenID Connect authentication suites.
-            <strong>196 of 203 Touchstone tests pass (0 failed) — conformant</strong>
-            against the October 2026 drafts. A plugin on JSS; one command:
+            (RFC 9421), the type index and search services (HTTP QUERY), moving
+            resources between containers, the CID (did:key, Nostr keys and
+            HTTPS) and OpenID Connect authentication suites, and a one-file todo
+            app served at <code class="bg-white px-1 rounded text-sm">/todo/</code>.
+            <strong>210 of 221 Touchstone tests pass (0 failed) — conformant</strong>
+            against the 19 October 2026 drafts. A plugin on JSS; one command:
             <code class="bg-white px-1 rounded text-sm">npx lwsd</code>.
           </li>
           <li class="relative pl-5">
@@ -753,7 +756,7 @@
             >
           </summary>
           <div class="px-4 pb-4 text-sm">
-            The specifications are W3C Working Drafts (core protocol: 5 October
+            The specifications are W3C Working Drafts (core protocol: 19 October
             2026) under a Working Group whose charter is being renewed. They are
             implementable today: a conformance harness exists, and servers pass
             it (see Conformance &amp; Test Suites above). Expect details to move
